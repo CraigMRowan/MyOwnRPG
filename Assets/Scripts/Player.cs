@@ -6,14 +6,16 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
     public float moveSpeed;
+    public int maxHP;
+    private int currentHP;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        currentHP = maxHP;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
