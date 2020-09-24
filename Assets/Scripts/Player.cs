@@ -42,11 +42,11 @@ public class Player : MonoBehaviour
 
     void CheckInteract()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDirection, interactRange, 1 << 8);
+        RaycastHit2D cast = Physics2D.Raycast(transform.position, facingDirection, interactRange, 1 << 8);
 
-        if (hit.collider != null)
+        if (cast.collider != null)
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            Interactable interactable = cast.collider.GetComponent<Interactable>();
 
             if (Input.GetKeyDown(KeyCode.E))
                 interactable.Interact();
