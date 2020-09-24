@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public int xpToNextLevel;
     public int attackPower;
     public int defencePower;
+    private Vector2 facingDirection;
+    public float interactRange;
 
     void Start()
     {
@@ -22,10 +24,32 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Move();
+        CheckInteract();
+    }
+
+    void Move()
+    {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector2 velocity = new Vector2(x, y);
 
+        if (velocity.magnitude != 0)
+            facingDirection = velocity;
+
         rigidBody.velocity = velocity * moveSpeed;
+    }
+
+    void CheckInteract()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDirection, interactRange, 1 << 8);
+
+        if (hit.collider != null)
+        {
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            if (Input.GetKeyDown(KeyCode.E))
+                interactable.Interact();
+        }
     }
 }
