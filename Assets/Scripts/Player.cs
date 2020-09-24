@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public int maxHP;
     private int currentHP;
-
+    private int currentXP;
+    public int xpToNextLevel;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         currentHP = maxHP;
+        currentXP = 0;
     }
 
     void Update()
