@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private int currentHP;
     private int currentXP;
     public int xpToNextLevel;
+    public int attackPower;
+    public int defencePower;
 
     void Start()
     {
