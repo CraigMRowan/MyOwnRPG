@@ -9,14 +9,14 @@ public class UIItem : MonoBehaviour, IPointerDownHandler//, IPointerEnterHandler
     public Item item;
     private Image spriteImage;
     private UIItem selectedItem;
-    /*public bool craftingSlot = false;
+    public bool craftingSlot = false;
     private CraftingSlots craftingSlots;
     public bool craftingResultSlot = false;
-    private Tooltip tooltip;*/
+    //private Tooltip tooltip;
 
     private void Awake()
     {
-        //craftingSlots = FindObjectOfType<CraftingSlots>();
+        craftingSlots = FindObjectOfType<CraftingSlots>();
         //tooltip = FindObjectOfType<Tooltip>();
         selectedItem = GameObject.Find("SelectedItem").GetComponent<UIItem>();
         spriteImage = GetComponent<Image>();
@@ -37,17 +37,17 @@ public class UIItem : MonoBehaviour, IPointerDownHandler//, IPointerEnterHandler
             spriteImage.color = Color.clear;
         }
 
-        /*if (craftingSlot)
+        if (craftingSlot)
         {
             craftingSlots.UpdateRecipe();
-        }*/
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (this.item != null)
         {
-            /*UICraftResult craftResult = GetComponent<UICraftResult>();
+            UICraftResult craftResult = GetComponent<UICraftResult>();
             if (craftResult != null && this.item != null && selectedItem.item == null)
             {
                 craftResult.PickItem();
@@ -55,7 +55,7 @@ public class UIItem : MonoBehaviour, IPointerDownHandler//, IPointerEnterHandler
                 craftResult.ClearSlots();
             }
             else if (!craftingResultSlot)
-            {*/
+            {
                 if (selectedItem.item != null)
                 {
                     Item clone = new Item(selectedItem.item);
@@ -67,9 +67,9 @@ public class UIItem : MonoBehaviour, IPointerDownHandler//, IPointerEnterHandler
                     selectedItem.UpdateItem(this.item);
                     UpdateItem(null);
                 }
-            //}
+            }
         }
-        else if (selectedItem.item != null)// && !craftingResultSlot)
+        else if (selectedItem.item != null && !craftingResultSlot)
         {
             UpdateItem(selectedItem.item);
             selectedItem.UpdateItem(null);
