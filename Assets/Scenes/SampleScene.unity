@@ -4364,6 +4364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 1995945547913646041, guid: 9f37f61fba78d4249b981b3fdcc84e6f, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InteractWithChest
+      objectReference: {fileID: 0}
     - target: {fileID: 1995945547913646043, guid: 9f37f61fba78d4249b981b3fdcc84e6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.61
@@ -4465,5 +4469,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2558565613270997939, guid: 0bd26898c00364037bb881bd9678f378, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0bd26898c00364037bb881bd9678f378, type: 3}
