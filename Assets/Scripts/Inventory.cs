@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Item> playerItems = new List<Item>();
-    //public UIInventory inventoryUI;
+    public UIInventory inventoryUI;
     ItemDatabase itemDatabase;
 
     private void Awake()
@@ -16,19 +16,21 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         GiveItem(1);
+        GiveItem(1);
+        GiveItem(1);
     }
 
     public void GiveItem(int id)
     {
         Item itemToAdd = itemDatabase.GetItem(id);
-        //inventoryUI.AddItemToUI(itemToAdd);
+        inventoryUI.AddItemToUI(itemToAdd);
         playerItems.Add(itemToAdd);
     }
 
     public void GiveItem(string itemName)
     {
         Item itemToAdd = itemDatabase.GetItem(itemName);
-        //inventoryUI.AddItemToUI(itemToAdd);
+        inventoryUI.AddItemToUI(itemToAdd);
         playerItems.Add(itemToAdd);
     }
 

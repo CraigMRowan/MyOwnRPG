@@ -9,13 +9,14 @@ public class Item
     public string description;
     public Sprite icon;
     public Dictionary<string, int> stats = new Dictionary<string, int>();
+    private readonly Sprite[] sprites = Resources.LoadAll<Sprite>("roguelikeChar_transparent");
 
     public Item(int id, string title, string description, Dictionary<string, int> stats)
     {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.icon = Resources.Load<Sprite>(title);
+        this.icon = GetSpriteByName(title);
         this.stats = stats;
     }
 
@@ -26,5 +27,16 @@ public class Item
         this.description = item.description;
         this.icon = item.icon;
         this.stats = item.stats;
+    }
+
+    public Sprite GetSpriteByName(string name)
+    {
+        foreach (Sprite sprite in sprites)
+        {
+            if (sprite.name == name)
+                return sprite;
+        }
+
+        return null;
     }
 }
