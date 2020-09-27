@@ -9,7 +9,7 @@ public class Item
     public string description;
     public Sprite icon;
     public Dictionary<string, int> stats = new Dictionary<string, int>();
-    private readonly Sprite[] sprites = Resources.LoadAll<Sprite>("roguelikeChar_transparent");
+    private readonly Sprite[] sprites = Resources.LoadAll<Sprite>("Weapons");
 
     public Item(int id, string title, string description, Dictionary<string, int> stats)
     {
