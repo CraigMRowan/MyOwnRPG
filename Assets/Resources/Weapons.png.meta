@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 5601323976189978565
-    second: Weapons_0
+    second: Wooden Staff
   - first:
       213: -761887118410055393
     second: Weapons_1
@@ -13,10 +13,10 @@ TextureImporter:
     second: Weapons_2
   - first:
       213: -8951780388439148649
-    second: Weapons_3
+    second: Iron Staff
   - first:
       213: -5082318553336741150
-    second: Weapons_4
+    second: Gold Staff
   - first:
       213: -3087264978319007404
     second: Wooden Mace
@@ -419,7 +419,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapons_0
+      name: Wooden Staff
       rect:
         serializedVersion: 2
         x: 0
@@ -482,7 +482,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapons_3
+      name: Iron Staff
       rect:
         serializedVersion: 2
         x: 51
@@ -503,7 +503,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapons_4
+      name: Gold Staff
       rect:
         serializedVersion: 2
         x: 68

@@ -30,7 +30,7 @@ public class CraftRecipeDatabase : MonoBehaviour
     {
         recipes = new List<CraftRecipe>()
         {
-            new CraftRecipe(1, new int[] {1, 0})
+            new CraftRecipe(2, new int[] {1, 3})
         };
     }
 }
