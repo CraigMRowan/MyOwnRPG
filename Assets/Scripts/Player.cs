@@ -15,15 +15,6 @@ public class Player : MonoBehaviour
     private Vector2 facingDirection;
     public float interactRange;
 
-    [Header("Sprites")]
-    public Sprite body;
-    public Sprite hair;
-    public Sprite shirt;
-    public Sprite pants;
-    public Sprite shoes;
-    public Sprite weapon;
-    public Sprite shield;
-
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
