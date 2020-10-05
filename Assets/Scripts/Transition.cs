@@ -16,7 +16,7 @@ public class Transition : MonoBehaviour
         }
         else
         {
-            var direction = Input.GetAxisRaw("Horizontal") * 10;
+            var direction = Input.GetAxisRaw("Horizontal") * 18;
             if (!(Camera.main is null))
                 Camera.main.transform.Translate(direction, 0, 0);
         }
