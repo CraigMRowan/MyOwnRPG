@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.09557724}
@@ -142,7 +142,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1995945547913646042}
         m_TargetAssemblyTypeName: Chest, Assembly-CSharp
-        m_MethodName: OpenChest
+        m_MethodName: InteractWithChest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

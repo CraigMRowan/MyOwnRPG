@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     {
         var cast = Physics2D.Raycast(transform.position, _facingDirection, interactRange, 1 << 8);
 
-        if (cast.collider == null) return;
+        if (cast.collider is null) return;
         var interactable = cast.collider.GetComponent<Interactable>();
         if (Input.GetKeyDown(KeyCode.E))
             interactable.Interact();

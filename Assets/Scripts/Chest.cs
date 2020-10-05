@@ -1,34 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public Sprite chestOpenSprite;
-    public Sprite chestClosedSprite;
-    private bool chestOpen;
-    Inventory inventory;
-    private bool ChestPrevOpened;
-
+    [SerializeField] private Sprite chestOpenSprite;
+    [SerializeField] private Sprite chestClosedSprite;
+    
+    private SpriteRenderer _spriteRenderer;
+    private bool _chestOpen;
+    private bool _chestPrevOpened;
+    private Inventory _inventory;
+    
     private void Start()
     {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        chestOpen = false;
-        inventory = FindObjectOfType<Inventory>();
-        ChestPrevOpened = false;
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _chestOpen = false;
+        _inventory = FindObjectOfType<Inventory>();
+        _chestPrevOpened = false;
     }
 
     public void InteractWithChest()
     {
-        spriteRenderer.sprite = (chestOpen) ? chestClosedSprite : chestOpenSprite;
+        _spriteRenderer.sprite = (_chestOpen) ? chestClosedSprite : chestOpenSprite;
 
-        if (!chestOpen && !ChestPrevOpened)
+        if (!_chestOpen && !_chestPrevOpened)
         {
-            inventory.GiveItem("Diamond Axe");
-            ChestPrevOpened = true;
+            _inventory.GiveItem("Diamond Axe");
+            _chestPrevOpened = true;
         }
         
-        chestOpen = !chestOpen;
+        _chestOpen = !_chestOpen;
     }
 }
